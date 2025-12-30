@@ -27,3 +27,19 @@ This small project demonstrates:
         "intent": "complaint",
         "probabilities": {"complaint": 0.85, "question": 0.05, ...}
     }
+
+   # ✅ Correct command to resolve ELB DNS
+
+✔ Use hosts database
+
+getent hosts <your elb address>
+
+
+If DNS is working, you’ll get output like:
+
+    13.xxx.xxx.xxx   a65bc5e7a62364b3a80fb6a50cbac397-1689525846.ap-south-1.elb.amazonaw
+
+Take Ip of output then
+
+
+     curl -X POST --resolve example.com:80:13.xxx.xx.xxx http://example.co
